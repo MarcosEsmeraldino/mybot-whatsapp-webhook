@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: mybot-whatsapp-webhook
+
+---
+spring:
+  kafka:
+    topic:  mybot-whatsapp-topic
+    template:
+      default-topic: mybot-whatsapp-topic
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        acks: all
+        retries: 10
+        retry.backoff.ms: 1000
+    admin:
+      properties:
+        bootstrap.servers: localhost:9092,localhost:9093,localhost:9094

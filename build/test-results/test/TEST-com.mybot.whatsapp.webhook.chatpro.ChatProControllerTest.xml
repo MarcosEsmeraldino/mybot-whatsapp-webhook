@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.mybot.whatsapp.webhook.chatpro.ChatProControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-08-09T22:12:42" hostname="marcos-ubuntu-22" time="0.358">
+  <properties/>
+  <testcase name="retorna204AoEnviarMensagem()" classname="com.mybot.whatsapp.webhook.chatpro.ChatProControllerTest" time="0.358"/>
+  <system-out><![CDATA[19:12:40.083 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.mybot.whatsapp.webhook.chatpro.ChatProControllerTest]: ChatProControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:12:40.213 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.mybot.whatsapp.webhook.Application for test class com.mybot.whatsapp.webhook.chatpro.ChatProControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.2)
+
+2024-08-09T19:12:40.609-03:00  INFO 65188 --- [mybot-whatsapp-webhook] [    Test worker] c.m.w.w.chatpro.ChatProControllerTest    : Starting ChatProControllerTest using Java 21.0.2 with PID 65188 (started by marcos in /home/marcos/IdeaProjects/mybot-whatsapp-webhook)
+2024-08-09T19:12:40.612-03:00  INFO 65188 --- [mybot-whatsapp-webhook] [    Test worker] c.m.w.w.chatpro.ChatProControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2024-08-09T19:12:42.721-03:00  INFO 65188 --- [mybot-whatsapp-webhook] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-08-09T19:12:42.722-03:00  INFO 65188 --- [mybot-whatsapp-webhook] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-08-09T19:12:42.725-03:00  INFO 65188 --- [mybot-whatsapp-webhook] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-08-09T19:12:42.770-03:00  INFO 65188 --- [mybot-whatsapp-webhook] [    Test worker] c.m.w.w.chatpro.ChatProControllerTest    : Started ChatProControllerTest in 2.486 seconds (process running for 3.869)
+]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/home/marcos/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.18/417558ea01fe9f0e8a94af28b9469d281c4e3984/byte-buddy-agent-1.14.18.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>
