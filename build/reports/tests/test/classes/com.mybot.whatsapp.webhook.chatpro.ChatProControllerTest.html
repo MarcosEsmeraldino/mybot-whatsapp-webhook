@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">1</div>
+<div class="counter">3</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.358s</div>
+<div class="counter">0.328s</div>
 <p>duration</p>
 </div>
 </td>
@@ -82,7 +82,17 @@
 </thead>
 <tr>
 <td class="success">retorna204AoEnviarMensagem()</td>
-<td class="success">0.358s</td>
+<td class="success">0.266s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">retorna400AoEnviarMensagemInvalida()</td>
+<td class="success">0.045s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">retorna404AoEnviarMensagemSemHost()</td>
+<td class="success">0.017s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -90,8 +100,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>19:12:40.083 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.mybot.whatsapp.webhook.chatpro.ChatProControllerTest]: ChatProControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-19:12:40.213 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.mybot.whatsapp.webhook.Application for test class com.mybot.whatsapp.webhook.chatpro.ChatProControllerTest
+<pre>21:55:13.141 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.mybot.whatsapp.webhook.chatpro.ChatProControllerTest]: ChatProControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+21:55:13.288 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.mybot.whatsapp.webhook.Application for test class com.mybot.whatsapp.webhook.chatpro.ChatProControllerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -102,12 +112,13 @@
 
  :: Spring Boot ::                (v3.3.2)
 
-2024-08-09T19:12:40.609-03:00  INFO 65188 --- [mybot-whatsapp-webhook] [    Test worker] c.m.w.w.chatpro.ChatProControllerTest    : Starting ChatProControllerTest using Java 21.0.2 with PID 65188 (started by marcos in /home/marcos/IdeaProjects/mybot-whatsapp-webhook)
-2024-08-09T19:12:40.612-03:00  INFO 65188 --- [mybot-whatsapp-webhook] [    Test worker] c.m.w.w.chatpro.ChatProControllerTest    : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2024-08-09T19:12:42.721-03:00  INFO 65188 --- [mybot-whatsapp-webhook] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2024-08-09T19:12:42.722-03:00  INFO 65188 --- [mybot-whatsapp-webhook] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-08-09T19:12:42.725-03:00  INFO 65188 --- [mybot-whatsapp-webhook] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
-2024-08-09T19:12:42.770-03:00  INFO 65188 --- [mybot-whatsapp-webhook] [    Test worker] c.m.w.w.chatpro.ChatProControllerTest    : Started ChatProControllerTest in 2.486 seconds (process running for 3.869)
+2024-08-12T21:55:13.674-03:00  INFO 12160 --- [mybot-whatsapp-webhook] [    Test worker] c.m.w.w.chatpro.ChatProControllerTest    : Starting ChatProControllerTest using Java 21.0.2 with PID 12160 (started by marcos in /home/marcos/IdeaProjects/mybot-whatsapp-webhook)
+2024-08-12T21:55:13.677-03:00  INFO 12160 --- [mybot-whatsapp-webhook] [    Test worker] c.m.w.w.chatpro.ChatProControllerTest    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-08-12T21:55:15.553-03:00  INFO 12160 --- [mybot-whatsapp-webhook] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-08-12T21:55:15.554-03:00  INFO 12160 --- [mybot-whatsapp-webhook] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-08-12T21:55:15.558-03:00  INFO 12160 --- [mybot-whatsapp-webhook] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2024-08-12T21:55:15.586-03:00  INFO 12160 --- [mybot-whatsapp-webhook] [    Test worker] c.m.w.w.chatpro.ChatProControllerTest    : Started ChatProControllerTest in 2.227 seconds (process running for 3.232)
+2024-08-12T21:55:15.907-03:00  WARN 12160 --- [mybot-whatsapp-webhook] [    Test worker] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [1] in public void com.mybot.whatsapp.webhook.chatpro.ChatProController.enviarMensagem(java.lang.String,com.mybot.whatsapp.webhook.chatpro.dto.ChatProMensagemDTO) with 2 errors: [Field error in object 'chatProMensagemDTO' on field 'type': rejected value [null]; codes [NotNull.chatProMensagemDTO.type,NotNull.type,NotNull.com.mybot.whatsapp.webhook.chatpro.dto.ChatProMensagemTypeEnum,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [chatProMensagemDTO.type,type]; arguments []; default message [type]]; default message [must not be null]] [Field error in object 'chatProMensagemDTO' on field 'body': rejected value [null]; codes [NotNull.chatProMensagemDTO.body,NotNull.body,NotNull.com.mybot.whatsapp.webhook.chatpro.dto.ChatProBodyDTO,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [chatProMensagemDTO.body,body]; arguments []; default message [body]]; default message [must not be null]] ]
 </pre>
 </span>
 </div>
@@ -129,7 +140,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.8</a> at Aug 9, 2024, 7:12:43 PM</p>
+<a href="http://www.gradle.org">Gradle 8.8</a> at Aug 12, 2024, 9:55:15 PM</p>
 </div>
 </div>
 </body>

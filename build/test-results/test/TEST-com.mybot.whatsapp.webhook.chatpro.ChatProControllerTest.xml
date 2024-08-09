@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.mybot.whatsapp.webhook.chatpro.ChatProControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-08-09T22:12:42" hostname="marcos-ubuntu-22" time="0.358">
+<testsuite name="com.mybot.whatsapp.webhook.chatpro.ChatProControllerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-08-13T00:55:15" hostname="marcos-ubuntu-22" time="0.339">
   <properties/>
-  <testcase name="retorna204AoEnviarMensagem()" classname="com.mybot.whatsapp.webhook.chatpro.ChatProControllerTest" time="0.358"/>
-  <system-out><![CDATA[19:12:40.083 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.mybot.whatsapp.webhook.chatpro.ChatProControllerTest]: ChatProControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-19:12:40.213 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.mybot.whatsapp.webhook.Application for test class com.mybot.whatsapp.webhook.chatpro.ChatProControllerTest
+  <testcase name="retorna204AoEnviarMensagem()" classname="com.mybot.whatsapp.webhook.chatpro.ChatProControllerTest" time="0.266"/>
+  <testcase name="retorna400AoEnviarMensagemInvalida()" classname="com.mybot.whatsapp.webhook.chatpro.ChatProControllerTest" time="0.045"/>
+  <testcase name="retorna404AoEnviarMensagemSemHost()" classname="com.mybot.whatsapp.webhook.chatpro.ChatProControllerTest" time="0.017"/>
+  <system-out><![CDATA[21:55:13.141 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.mybot.whatsapp.webhook.chatpro.ChatProControllerTest]: ChatProControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+21:55:13.288 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.mybot.whatsapp.webhook.Application for test class com.mybot.whatsapp.webhook.chatpro.ChatProControllerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -14,12 +16,13 @@
 
  :: Spring Boot ::                (v3.3.2)
 
-2024-08-09T19:12:40.609-03:00  INFO 65188 --- [mybot-whatsapp-webhook] [    Test worker] c.m.w.w.chatpro.ChatProControllerTest    : Starting ChatProControllerTest using Java 21.0.2 with PID 65188 (started by marcos in /home/marcos/IdeaProjects/mybot-whatsapp-webhook)
-2024-08-09T19:12:40.612-03:00  INFO 65188 --- [mybot-whatsapp-webhook] [    Test worker] c.m.w.w.chatpro.ChatProControllerTest    : No active profile set, falling back to 1 default profile: "default"
-2024-08-09T19:12:42.721-03:00  INFO 65188 --- [mybot-whatsapp-webhook] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2024-08-09T19:12:42.722-03:00  INFO 65188 --- [mybot-whatsapp-webhook] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-08-09T19:12:42.725-03:00  INFO 65188 --- [mybot-whatsapp-webhook] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
-2024-08-09T19:12:42.770-03:00  INFO 65188 --- [mybot-whatsapp-webhook] [    Test worker] c.m.w.w.chatpro.ChatProControllerTest    : Started ChatProControllerTest in 2.486 seconds (process running for 3.869)
+2024-08-12T21:55:13.674-03:00  INFO 12160 --- [mybot-whatsapp-webhook] [    Test worker] c.m.w.w.chatpro.ChatProControllerTest    : Starting ChatProControllerTest using Java 21.0.2 with PID 12160 (started by marcos in /home/marcos/IdeaProjects/mybot-whatsapp-webhook)
+2024-08-12T21:55:13.677-03:00  INFO 12160 --- [mybot-whatsapp-webhook] [    Test worker] c.m.w.w.chatpro.ChatProControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2024-08-12T21:55:15.553-03:00  INFO 12160 --- [mybot-whatsapp-webhook] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-08-12T21:55:15.554-03:00  INFO 12160 --- [mybot-whatsapp-webhook] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-08-12T21:55:15.558-03:00  INFO 12160 --- [mybot-whatsapp-webhook] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2024-08-12T21:55:15.586-03:00  INFO 12160 --- [mybot-whatsapp-webhook] [    Test worker] c.m.w.w.chatpro.ChatProControllerTest    : Started ChatProControllerTest in 2.227 seconds (process running for 3.232)
+2024-08-12T21:55:15.907-03:00  WARN 12160 --- [mybot-whatsapp-webhook] [    Test worker] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [1] in public void com.mybot.whatsapp.webhook.chatpro.ChatProController.enviarMensagem(java.lang.String,com.mybot.whatsapp.webhook.chatpro.dto.ChatProMensagemDTO) with 2 errors: [Field error in object 'chatProMensagemDTO' on field 'type': rejected value [null]; codes [NotNull.chatProMensagemDTO.type,NotNull.type,NotNull.com.mybot.whatsapp.webhook.chatpro.dto.ChatProMensagemTypeEnum,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [chatProMensagemDTO.type,type]; arguments []; default message [type]]; default message [must not be null]] [Field error in object 'chatProMensagemDTO' on field 'body': rejected value [null]; codes [NotNull.chatProMensagemDTO.body,NotNull.body,NotNull.com.mybot.whatsapp.webhook.chatpro.dto.ChatProBodyDTO,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [chatProMensagemDTO.body,body]; arguments []; default message [body]]; default message [must not be null]] ]
 ]]></system-out>
   <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/home/marcos/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.18/417558ea01fe9f0e8a94af28b9469d281c4e3984/byte-buddy-agent-1.14.18.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
