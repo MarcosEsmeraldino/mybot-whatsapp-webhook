@@ -4,11 +4,16 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mybot.whatsapp.webhook.dto.MyBotMensagem;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.common.header.Header;
+import org.apache.kafka.common.header.internals.RecordHeader;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 @Slf4j
@@ -21,12 +26,17 @@ public class MyBotWhatsappProducer {
     @Autowired
     ObjectMapper objectMapper;
 
+    @Value("${spring.kafka.topic}")
+    public String topic;
+
     public CompletableFuture<SendResult<String, String>> enviarMensagemDoCliente(MyBotMensagem mensagem) {
+
         try {
             String key = mensagem.cliente().contato();
             String value = objectMapper.writeValueAsString(mensagem);
 
-            var completableFuture = kafkaTemplate.sendDefault(key, value);
+            ProducerRecord<String, String> producerRecord = buildProducerRecord(key, value, topic);
+            var completableFuture = kafkaTemplate.send(producerRecord);
             return completableFuture
                     .whenComplete((sendResult, throwable) -> {
                         if (throwable != null) {
@@ -39,6 +49,11 @@ public class MyBotWhatsappProducer {
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private ProducerRecord<String, String> buildProducerRecord(String key, String value, String topic) {
+        List<Header> recordHeaders = List.of(new RecordHeader("origem", "cliente".getBytes()));
+        return new ProducerRecord<>(topic, null, key, value, recordHeaders);
     }
 
     private void handleFailure(String key, String value, Throwable ex) {
